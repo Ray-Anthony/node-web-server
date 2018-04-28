@@ -32,14 +32,6 @@ app.use(express.static(__dirname + '/public'));
 
 // Routes
 
-// app.get('/', (request, response) => {
-//     response.send({
-//         name: 'Ray',
-//         age: 31,
-//         likes: ['Bad bitches', 'Happy trees']
-//     })
-// });
-
 app.get('/', (request, response) => { 
     response.render("home.hbs", {
         pageTitle: 'Home Page',
@@ -50,6 +42,12 @@ app.get('/', (request, response) => {
 app.get('/about', (request, response) => { 
     response.render("about.hbs", {
         pageTitle: 'About Page',
+    });
+});
+
+app.get('projects', (request, response) => {
+    response.render('projects.hbs', {
+       pageTitle: 'Projects' 
     });
 });
 
